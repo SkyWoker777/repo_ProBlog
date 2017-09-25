@@ -162,7 +162,7 @@ ul.main-navigation li {
     background: #FF807B;
     bottom: 0;
     border-radius: 10px;
-    transition: all 0.6s ease-out;
+    transition: all 0.5s ease-out;
     content: ' ';
     display: block;
     width: 0;
@@ -216,6 +216,20 @@ header {
     font-family: 'Rubik One', sans-serif;
     margin: 0px;
     padding-left: 10px;
+}
+
+.page-header h1 span{
+    color: #FF807B;
+    font: 600 18px "Arimo";
+    float: right;
+    padding: 15px 30px 0 30px;
+}
+
+.box-paging {
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 40px;
+    padding: 10px;
 }
 
 .post .post-title h2 {

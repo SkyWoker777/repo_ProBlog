@@ -10,5 +10,6 @@ namespace ProBlog.Models
     {
         public IEnumerable<Post> Posts { get; set; }
         public IEnumerable<Category> Categories { get; set; }
+        public Pagination PageInfo { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using ProBlog.Business;
 using ProBlog.Core;
+using ProBlog.Core.Etities;
 using ProBlog.Models;
 using System;
 using System.Collections.Generic;
@@ -14,26 +15,42 @@ namespace ProBlog.Controllers
         private PostHelper _helper = new PostHelper(new Repository());
         private CategoryHelper _categoryHelper = new CategoryHelper(new Repository());
 
-        // GET: /Post/List
-        public ActionResult List()
+        // GET: /Post/List?page=1
+        public ActionResult List(int page = 1)
         {
+            int pageSize = 3;
+            List<Post> posts = new List<Post>(_helper.GetPosts().OrderByDescending(x => x.PostedOn)); 
+            IEnumerable<Post> postsOnPages = posts.Skip((page - 1) * pageSize).Take(pageSize);
+            Pagination pageInfo = new Pagination() { PageNumber = page, PageSize = pageSize, TotalItems = posts.Count };
+
             BlogViewModel viewModel = new BlogViewModel()
             {
-                Posts = _helper.GetPosts(),
+                Posts = postsOnPages,
                 Categories = _categoryHelper.GetCategories(),
+                PageInfo = pageInfo
             };
             return View(viewModel);
         }
 
-        //GET: /Post/PostsForCategory/3
-        public ActionResult PostsForCategory(int categoryId)
+        //GET: /Post/ListByCategory/3/page1
+        public ActionResult ListByCategory(int categoryId, string categoryName, int page)
         {
+            int pageSize = 2;
+            List<Post> posts = new List<Post>(_helper.GetPosts(categoryId)
+                .OrderByDescending(x => x.PostedOn)
+                );
+            IEnumerable<Post> postsOnPages = posts.Skip((page - 1) * pageSize).Take(pageSize);
+            Pagination pageInfo = new Pagination() { PageNumber = page, PageSize = pageSize, TotalItems = posts.Count };
+
+            ViewBag.CategoryName = categoryName;
+
             BlogViewModel viewModel = new BlogViewModel()
             {
-                Posts = _helper.GetPosts(categoryId),
+                Posts = postsOnPages,
                 Categories = _categoryHelper.GetCategories(),
+                PageInfo = pageInfo
             };
-            return View(viewModel);
+            return View("PostsForCategory", viewModel);
         }
 
         public FileContentResult GetImage(int postId)

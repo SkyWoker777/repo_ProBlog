@@ -14,15 +14,22 @@ namespace ProBlog
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                "List",
+                "blog/posts/{page}",
+                new { controller = "Post", action = "List", page = "" }
+            );
+
+            routes.MapRoute(
+                "ListByCategory",
+                "blog/posts-{categoryName}/{categoryId}/page{page}",
+                new { controller = "Post", action = "ListByCategory" }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
-
-            routes.MapRoute(
-                name: "PostsForCategory",
-                url: "{controller}/{action}/{categoryId}",
-                defaults: new { controller = "Post", action = "PostsForCategory", categoryId = UrlParameter.Optional });
         }
     }
 }

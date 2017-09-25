@@ -11,7 +11,8 @@
         @foreach (var item in Model)
         {
             <li>
-                @Html.ActionLink(item.Name, "PostsForCategory", new RouteValueDictionary(new { categoryId = item.Id}))
+                @Html.ActionLink(item.Name, "ListByCategory", 
+               new RouteValueDictionary(new { categoryId = item.Id, categoryName = item.Name, page = 1 }))
             </li>
         }
     </ul>
