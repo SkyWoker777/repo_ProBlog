@@ -26,7 +26,8 @@ namespace ProBlog.Controllers
 
         public RedirectResult Portfolio()
         {
-            return Redirect("https://github.com/SkyWoker777");
+            string url = "https://github.com/SkyWoker777";
+            return Redirect(url);
         }
     }
 }

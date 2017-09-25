@@ -1,5 +1,4 @@
-﻿@model ProBlog.Models.PostsListViewModel
-
+﻿@model ProBlog.Models.BlogViewModel
 @{
     ViewBag.Title = "Blog";
 }
@@ -19,5 +18,7 @@
     }
     else
     {
-        <p>Статьи не найдены!</p>
+        <div class="notfound">
+            <p>Posts not found!</p>
+        </div>
     }

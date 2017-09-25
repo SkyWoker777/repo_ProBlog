@@ -192,6 +192,12 @@ ul.main-navigation li {
     color: #FF807B;
 }
 
+.notfound{
+    margin-left: 36px;
+    margin-top: 20px;
+    font: 500 14px 'Exo 2';
+}
+
 header {
     background: #FFFFFF;
     display: inline-block;
@@ -214,7 +220,7 @@ header {
 
 .post .post-title h2 {
     display: inline-block;
-    margin-left: 35px;
+    margin-left: 36px;
     font-family: "Exo 2", sans-serif;
     color: #273747;
 }

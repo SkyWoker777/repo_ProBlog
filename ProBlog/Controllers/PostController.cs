@@ -17,10 +17,10 @@ namespace ProBlog.Controllers
         // GET: /Post/List
         public ActionResult List()
         {
-            PostsListViewModel viewModel = new PostsListViewModel()
+            BlogViewModel viewModel = new BlogViewModel()
             {
                 Posts = _helper.GetPosts(),
-                Categories = _categoryHelper.GetCategories()
+                Categories = _categoryHelper.GetCategories(),
             };
             return View(viewModel);
         }
@@ -28,10 +28,10 @@ namespace ProBlog.Controllers
         //GET: /Post/PostsForCategory/3
         public ActionResult PostsForCategory(int categoryId)
         {
-            PostsListViewModel viewModel = new PostsListViewModel()
+            BlogViewModel viewModel = new BlogViewModel()
             {
                 Posts = _helper.GetPosts(categoryId),
-                Categories = _categoryHelper.GetCategories()
+                Categories = _categoryHelper.GetCategories(),
             };
             return View(viewModel);
         }
