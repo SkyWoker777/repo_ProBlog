@@ -1,0 +1,440 @@
+﻿@import url('https://fonts.googleapis.com/css?family=Exo+2:400,500,700&subset=cyrillic');
+@import url(https://fonts.googleapis.com/css?family=Rubik+One&subset=latin,cyrillic);
+@import url('https://fonts.googleapis.com/css?family=Satisfy');
+@import url(https://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic);
+
+html,
+body {
+    height: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.body-content {
+    flex: 1 0 auto;
+    height: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 100px;
+}
+
+#page_content {
+    width: 870px;
+    margin-left: 205px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover {
+    color: #FF807B;
+    text-decoration: none;
+}
+
+/*@media screen and (min-width:200px) and (max-width:1024px) {
+   
+}
+
+@media screen and (min-width: 200px) and (max-width:768px){
+
+}*/
+
+.jumbotron {
+    position: fixed;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    min-width: 310px;
+    min-height: 100%;
+    margin-bottom: 0px;
+    background: #273747 !important;
+    box-shadow: 5px 0px 5px -1px #cccccc;
+    z-index: 1000000
+}
+
+.jumbotron .logo-text {
+    position: relative;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+
+.jumbotron h1 {
+    font: 600 1.5em 'Exo 2', sans-serif;
+    border-bottom: 0;
+    margin: 0;
+}
+
+.logo-text h1 a, .logo-text h1 a:hover {
+    padding: 0;
+    color: #FF807B;
+    text-decoration: none;
+    border: 0;
+}
+
+.logo-text h1 a .logo-text-color {
+    color: #FFF;
+}
+
+.logo-text a:hover .logo-text-color {
+    color: #FF807B;
+}
+
+.logo-text p {
+    font-family: 'Exo 2', sans-serif;
+    font-size: 100%;
+    font-weight: bold;
+    background: linear-gradient(45deg, #FFFFFF 40%, #FF807B 60%, #FF807B) no-repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: block;
+    margin: 0;
+}
+
+.panel {
+    border: none;
+    border-radius: 0;
+    border-color: transparent;
+}
+
+.panel-default > .panel-body {
+    background: #273747;
+}
+
+.panel-heading p {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 100%;
+    color: #FF807B;
+}
+ 
+.panel-heading img {
+    display: block;
+    margin: 0px auto;
+    width: 130px;
+    height: 130px;
+    margin-top: 10px;
+}
+ 
+.panel-heading h4 {
+    font-size: 2em;
+    font-family: Satisfy, cursive;
+    text-align: center;
+    margin-top: 20px;
+    color: #000;
+}
+
+nav#menu ul.main-navigation {
+    display: table;
+    margin: 0px auto;
+    padding: 10px;
+}
+
+ul.main-navigation li {
+    list-style: none;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.main-navigation li::after {
+    background: #FF807B;
+    bottom: 0;
+    border-radius: 10px;
+    transition: all 0.6s ease-out;
+    content: ' ';
+    display: block;
+    width: 0;
+    height: 2px;
+    position: absolute;
+    right: -100%;
+}
+
+.main-navigation li:hover::after {
+    right: 0px;
+    width: 100%;
+}
+
+.main-navigation li a {
+    letter-spacing: 0.1em;
+    font-family: 'Segoe UI';
+    font-size: 130%;
+    display: block;
+    height: 30px;
+    text-decoration: none;
+    padding: 0;
+    color: #FFF;
+    border: none;
+}
+
+.main-navigation li a:hover {
+    color: #FF807B;
+}
+
+header {
+    background: #FFFFFF;
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    margin-top:38px;
+    width: 100%;
+}
+
+.page-header {
+    margin: 0px 0px 10px 20px;
+    padding-bottom: 10px;
+}
+
+.page-header h1{
+    font-family: 'Rubik One', sans-serif;
+    margin: 0px;
+    padding-left: 10px;
+}
+
+.post .post-title h2 {
+    display: inline-block;
+    margin-left: 35px;
+    font-family: "Exo 2", sans-serif;
+    color: #273747;
+}
+
+.post .post-category, .post-tags {
+    float: left;
+    font: 600 12px 'Segoe UI';
+    color: #00688b;
+    margin-left: 38px;
+}
+
+.post .tags-div {
+    font-style: italic;
+    display: inline;
+}
+
+.post .tags-div a {
+    margin-right: 5px;
+}
+
+.post .posted-date {
+    float: right;
+    color: #c8c7c7;
+}
+
+.post .row {
+    clear: both;
+    margin: 0px;
+    width: 100%;
+}
+
+.post .post-body {
+    clear: both;
+    margin-top: 20px;
+    margin-left: 36px;
+    font-family: 'Exo 2', sans-serif;
+    font-size: 14px;
+}
+
+.post-body .text-justify{
+    text-indent: 2em;
+}
+
+.post .post-foot {
+    padding-top: 5px;
+    float: right;
+    font-size: 14px;
+}
+
+.about {
+    margin-top: 20px;
+    margin-left: 36px;
+    font-family: 'Exo 2', suns-serif;
+    text-indent: 2em;
+}
+
+.about h2{
+    padding-bottom: 20px;
+    color: #273747;
+}
+
+.about p {
+    font-size: 150%;
+    text-align: justify;
+}
+
+.about p > span{
+    font-weight:600;
+    float: right;
+}
+
+.contacts {
+    margin-top: 20px;
+    margin-left: 36px;
+    font-family: 'Exo 2', suns-serif;
+    font-size: 120%;
+}
+
+.contacts p span{
+    font-weight: bold;
+}
+
+.footer {
+    line-height: 48px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    position: fixed;
+    border-top: 1px solid #cccccc;
+    background-color: #f5f5f5;
+    text-align: center;
+    z-index: 99999;
+}
+
+footer p{
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 100%;
+    padding-top: 5px;
+}
+
+/*------Hamburger------*/
+#nav-icon {
+    background: none;
+    cursor: pointer;
+    width: 30px;
+    height: 20px;
+    position: relative;
+    top: 16px;
+    right: 15px;
+    float: right;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    z-index: 998;
+}
+
+#nav-icon span{
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #FF807B;
+    border-radius: 10px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+#nav-icon span:nth-child(1) {
+    top: 0px;
+}
+
+#nav-icon span:nth-child(2), #nav-icon span:nth-child(3) {
+    top: 8px;
+}
+
+#nav-icon span:nth-child(4) {
+    top: 16px;
+}
+
+#nav-icon.open span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}
+
+#nav-icon.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+#nav-icon.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+#nav-icon.open span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+}
+/*-----#endregion-----*/
+
+.menu-categories { 
+    width: 300px;
+    display: none;
+    background: #f1f1f1;
+    box-shadow: 5px 5px 5px -1px #cccccc;
+    position: relative;
+    top: 50px;
+    left: 30px;
+    float:right;
+    text-align: center;
+    font: 600 14px 'Segoe UI';
+    z-index: 997; 
+}
+
+.menu-categories ul {
+    margin: 0; 
+    padding: 0;
+    list-style-type: none;
+    list-style-image: none;
+}
+
+.menu-categories li {
+    display: block;
+    padding: 20px 0 20px 0;
+    border-bottom:#dddddd 1px solid;
+}
+
+.menu-categories li:hover { 
+    display: block;    
+    background:#ffffff;
+    padding: 20px 0 20px 0;
+    border-bottom:#dddddd 1px solid;
+}
+
+.menu-categories ul li a { 
+    text-decoration:none;
+    margin: 0px;
+    color: #273747;
+}
+
+.menu-categories ul li a:hover {  
+    color: #FF807B;
+    text-decoration:none;
+}

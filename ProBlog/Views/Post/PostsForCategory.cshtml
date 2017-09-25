@@ -1,0 +1,27 @@
+﻿@model ProBlog.Models.PostsListViewModel
+@{
+    ViewBag.Title = "Blog";
+}
+
+<header>
+    @Html.Partial("_Categories", Model.Categories)
+    <div class="page-header">
+        @if (Model.Posts.Count() != 0)
+        {
+            <h1>@Model.Posts.First().Category.Name</h1>
+        }
+        else { <h1>Blog</h1>}
+    </div>
+</header>
+@if (Model.Posts.Count() > 0)
+{
+    foreach (var post in Model.Posts)
+    {
+        @Html.Partial("_PostTemplate", post)
+    }
+}
+else
+{
+    <h3>Posts not found!</h3>
+}
+

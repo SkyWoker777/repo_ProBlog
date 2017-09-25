@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>@ViewBag.Title</title>
+    <!-- Stylesheets -->
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <!--Sidebar Box-->
+    <div id="wrapper">
+        <div class="jumbotron">
+            <div class="logo-text">
+                <h1><a href="/">PURE<span class="logo-text-color">BiT</span></a></h1>
+                <p>News, Reviews, Things and more...</p>
+            </div>
+            <!--Header-->
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <img src="~/Content/images/myfoto.jpg" alt="foto placeholder" class="img-circle" />
+                    <h4 class="name">Dmitry Parfenov</h4>
+                    <p>Coding made simple</p>
+                </div>
+                <!--Navigation-->
+                <div class="panel-body">
+                    <nav id="menu">
+                        <ul class="main-navigation">
+                            <li>@Html.ActionLink("Blog", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About me", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("Portfolio", "Portfolio", "Home", null, new { target ="_blank" })</li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+    <!--Site content-->
+    <div class="container body-content">
+        <div id="page_content">
+                @RenderBody()
+        </div>
+    </div>
+    <!--footer-->
+    @*<div class="footer">
+        <footer>
+            <p>&copy; @DateTime.Now.Year - PureBiT. All rights reserved.</p>
+        </footer>
+    </div>*@
+</div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

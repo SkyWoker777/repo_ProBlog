@@ -1,0 +1,23 @@
+﻿@model ProBlog.Models.PostsListViewModel
+
+@{
+    ViewBag.Title = "Blog";
+}
+
+<header>
+    @Html.Partial("_Categories", Model.Categories)
+    <div class="page-header">
+        <h1>Latest Posts</h1>
+    </div>
+</header>
+    @if (Model.Posts.Count() > 0)
+    {
+        foreach (var post in Model.Posts)
+        {
+            @Html.Partial("_PostTemplate", post)
+        }
+    }
+    else
+    {
+        <p>Статьи не найдены!</p>
+    }

@@ -1,0 +1,18 @@
+﻿@model IEnumerable<ProBlog.Core.Etities.Category>
+
+<div id="nav-icon" title="Categories">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+<div class="menu-categories">
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>
+                @Html.ActionLink(item.Name, "PostsForCategory", new RouteValueDictionary(new { categoryId = item.Id}))
+            </li>
+        }
+    </ul>
+</div> 
