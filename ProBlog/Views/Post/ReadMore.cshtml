@@ -1,43 +1,37 @@
 ﻿@model ProBlog.Core.Etities.Post
+@{
+    ViewBag.Title = $"Blog - {Model.Title}";
+}
 
 <div class="post">
     <div class="post-meta">
         <div class="row">
-            <!--Title-->
-            <div class="post-title">
-                <h2>@Model.Title</h2>
-            </div>
+            <header>
+                <div class="page-header">
+                    <h1>@Model.Title</h1>
+                </div>
+            </header>
         </div>
         <div class="row">
-            <!--Category-->
             <div class="post-category">
                 Category: <span class="label label-primary">@Model.Category.Name</span>
             </div>
-            <!--Tags-->
             <div class="post-tags">
                 Tags: <span class="label label-info"></span>
             </div>
-            <!--Posted date-->
             <div class="posted-date">
                 @Model.PostedOn.ToShortDateString()
             </div>
         </div>
     </div>
-    <!--post-preview-->
     <div class="post-body">
         <img class="img-responsive" alt="post image" src="@Url.Action("GetImage", "Post", new { Model.Id })" />
         <div class="text-justify">
-            @Html.Raw(Model.Preview)
+            @Html.Raw(Model.Content)
         </div>
     </div>
-    <!--post-footer-->
     <div class="post-foot">
-        @Html.ActionLink("Read...", "ReadMore", "Post", new {
-       year = Model.PostedOn.Year,
-       month = Model.PostedOn.Month,
-       titlePost = Model.Title,
-       id = Model.Id
-   }, new { title = "Read more...",})
+        @Html.ActionLink("BACK To Posts", "List", "Post")
     </div>
 </div>
 

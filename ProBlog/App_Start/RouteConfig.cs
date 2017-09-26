@@ -20,6 +20,12 @@ namespace ProBlog
             );
 
             routes.MapRoute(
+                "ReadMore",
+                "archive/{year}/{month}/{titlePost}",
+                new { controller = "Post", action = "ReadMore" }
+            );
+
+            routes.MapRoute(
                 "ListByCategory",
                 "blog/posts-{categoryName}/{categoryId}/page{page}",
                 new { controller = "Post", action = "ListByCategory" }

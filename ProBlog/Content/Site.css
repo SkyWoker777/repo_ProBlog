@@ -110,6 +110,10 @@ a:hover {
     margin: 0;
 }
 
+.label{
+    font-size: 80%;
+}
+
 .panel {
     border: none;
     border-radius: 0;
@@ -192,7 +196,7 @@ ul.main-navigation li {
     color: #FF807B;
 }
 
-.notfound{
+.notfound {
     margin-left: 40%;
     margin-top: 20px;
     margin-right: 40%;
@@ -203,7 +207,7 @@ ul.main-navigation li {
 header {
     background: #FFFFFF;
     display: inline-block;
-    height: 60px;
+    height: 100%;
     line-height: 60px;
     margin-top:38px;
     width: 100%;
@@ -245,7 +249,7 @@ header {
 .post .post-category, .post-tags {
     float: left;
     font: 600 12px 'Segoe UI';
-    color: #00688b;
+    color: #FF807B;
     margin-left: 38px;
 }
 
@@ -422,10 +426,9 @@ footer p{
     display: none;
     background: #f1f1f1;
     box-shadow: 5px 5px 5px -1px #cccccc;
-    position: relative;
-    top: 50px;
-    left: 30px;
-    float:right;
+    position: absolute;
+    top: 88px;
+    right: 172px;
     text-align: center;
     font: 600 14px 'Segoe UI';
     z-index: 997; 

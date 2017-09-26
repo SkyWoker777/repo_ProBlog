@@ -41,10 +41,12 @@ namespace ProBlog.Business
         {
             return _context.Posts;
         }
+
         public IEnumerable<Post> GetPosts(int categoryId)
         {
             return _context.Posts.Where(x => x.Category != null && x.Category.Id == categoryId).ToList();
         }
+
         public Post GetPost(int id)
         {
             return _context.Posts.First(x => x.Id == id);

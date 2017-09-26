@@ -32,13 +32,16 @@ namespace ProBlog.Controllers
                 Categories = _categoryHelper.GetCategories(),
                 PageInfo = pageInfo
             };
+            if (viewModel.Posts == null)
+                throw new HttpException(404, "Posts not found!");
+
             return View(viewModel);
         }
 
         //GET: /Post/ListByCategory/3/page1
         public ActionResult ListByCategory(int categoryId, string categoryName, int page)
         {
-            int pageSize = 2;
+            int pageSize = 3;
             List<Post> posts = new List<Post>(_helper.GetPosts(categoryId)
                 .OrderByDescending(x => x.PostedOn)
                 .ToList()
@@ -54,7 +57,22 @@ namespace ProBlog.Controllers
                 Categories = _categoryHelper.GetCategories(),
                 PageInfo = pageInfo
             };
+            if (viewModel.Posts == null)
+                throw new HttpException(404, "Posts not found!");
+
             return View("PostsForCategory", viewModel);
+        }
+
+        // GET: /Post/ReadMore/1
+        public ViewResult ReadMore(int id)
+        {
+            var post = _helper.GetPost(id);
+            if (post == null)
+            {
+                throw new HttpException(404, "post not found!");
+            }
+
+            return View(post);
         }
 
         public FileContentResult GetImage(int postId)

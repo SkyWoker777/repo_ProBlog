@@ -226,6 +226,7 @@
     <Content Include="Views\Post\List.cshtml" />
     <Content Include="Views\Shared\_Categories.cshtml" />
     <Content Include="Views\Post\PostsForCategory.cshtml" />
+    <Content Include="Views\Post\ReadMore.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
