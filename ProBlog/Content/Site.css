@@ -193,9 +193,11 @@ ul.main-navigation li {
 }
 
 .notfound{
-    margin-left: 36px;
+    margin-left: 40%;
     margin-top: 20px;
-    font: 500 14px 'Exo 2';
+    margin-right: 40%;
+    font: 400 16px 'Exo 2';
+    opacity: 0.8;
 }
 
 header {
@@ -229,6 +231,7 @@ header {
     margin-left: 30%;
     margin-right: 30%;
     margin-top: 40px;
+    width: 40%;
     padding: 10px;
 }
 

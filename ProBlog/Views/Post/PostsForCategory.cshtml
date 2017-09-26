@@ -23,7 +23,9 @@ else
         <p>Posts not found!</p>
     </div>
 }
-<div class="pagination box-paging">
-    @Html.PageLinks(Model.PageInfo, x => Url.Action("ListByCategory", new { page = x }))
+<div class="box-paging">
+    <ul class="pagination">
+        @Html.PageLinks(Model.PageInfo, x => Url.Action("ListByCategory", new { page = x }))
+    </ul>
 </div>
 

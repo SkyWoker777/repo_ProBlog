@@ -7,11 +7,11 @@
 <header>
     @Html.Partial("_Categories", Model.Categories)
     <div class="page-header">
-        @if (Model.PageInfo.PageNumber > 1)
+        @if (Model.PageInfo.PageNumber == 1)
         {
-            <h1>Posts</h1>
+            <h1>Latest Posts</h1>
         }
-        else { <h1>Latest Posts</h1> }
+        else { <h1>Posts</h1> }
     </div>
 </header>
     @if (Model.Posts.Count() > 0)
@@ -28,6 +28,8 @@
         </div>
     }
 <br/>
-<div class="pagination box-paging">
-    @Html.PageLinks(Model.PageInfo, x => Url.Action("List", new { page = x }))
+<div class="box-paging">
+    <ul class="pagination">
+        @Html.PageLinks(Model.PageInfo, x => Url.Action("List", new { page = x }))
+    </ul>
 </div>

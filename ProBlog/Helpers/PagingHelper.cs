@@ -15,18 +15,17 @@ namespace ProBlog.Helpers
             StringBuilder result = new StringBuilder();
             for (int i = 1; i <= pageInfo.TotalPages; i++)
             {
+                TagBuilder tagLi = new TagBuilder("li");
                 TagBuilder tag = new TagBuilder("a");
                 tag.MergeAttribute("href", pageUrl(i));
                 tag.InnerHtml = i.ToString();
-                // если текущая страница, то выделяем ее,
-                // например, добавляя класс
+                tagLi.InnerHtml = tag.ToString();
+
                 if (i == pageInfo.PageNumber)
                 {
-                    tag.AddCssClass("active");
-                    tag.AddCssClass("btn-primary");
+                    tagLi.AddCssClass("active");
                 }
-                tag.AddCssClass("btn btn-default");
-                result.Append(tag.ToString());
+                result.Append(tagLi.ToString());
             }
             return MvcHtmlString.Create(result.ToString());
         }

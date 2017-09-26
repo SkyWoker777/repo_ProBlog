@@ -19,7 +19,10 @@ namespace ProBlog.Controllers
         public ActionResult List(int page = 1)
         {
             int pageSize = 3;
-            List<Post> posts = new List<Post>(_helper.GetPosts().OrderByDescending(x => x.PostedOn)); 
+            List<Post> posts = new List<Post>(_helper.GetPosts()
+                .OrderByDescending(x => x.PostedOn)
+                .ToList()
+                ); 
             IEnumerable<Post> postsOnPages = posts.Skip((page - 1) * pageSize).Take(pageSize);
             Pagination pageInfo = new Pagination() { PageNumber = page, PageSize = pageSize, TotalItems = posts.Count };
 
@@ -38,6 +41,7 @@ namespace ProBlog.Controllers
             int pageSize = 2;
             List<Post> posts = new List<Post>(_helper.GetPosts(categoryId)
                 .OrderByDescending(x => x.PostedOn)
+                .ToList()
                 );
             IEnumerable<Post> postsOnPages = posts.Skip((page - 1) * pageSize).Take(pageSize);
             Pagination pageInfo = new Pagination() { PageNumber = page, PageSize = pageSize, TotalItems = posts.Count };
