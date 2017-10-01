@@ -28,14 +28,10 @@ body {
     margin-left: 205px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
 .dl-horizontal dt {
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
@@ -59,6 +55,15 @@ a:hover {
 
 }*/
 
+.box-paging {
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-top: 40px;
+    width: 40%;
+    padding: 10px;
+    text-align: center;
+}
+
 .jumbotron {
     position: fixed;
     padding-top: 5px;
@@ -68,7 +73,7 @@ a:hover {
     margin-bottom: 0px;
     background: #273747 !important;
     box-shadow: 5px 0px 5px -1px #cccccc;
-    z-index: 1000000
+    z-index: 1000
 }
 
 .jumbotron .logo-text {
@@ -111,7 +116,7 @@ a:hover {
 }
 
 .label{
-    font-size: 80%;
+    font-size: 90%;
 }
 
 .panel {
@@ -197,11 +202,12 @@ ul.main-navigation li {
 }
 
 .notfound {
-    margin-left: 40%;
     margin-top: 20px;
-    margin-right: 40%;
+}
+
+.notfound p{
     font: 400 16px 'Exo 2';
-    opacity: 0.8;
+    text-align: center;
 }
 
 header {
@@ -226,17 +232,19 @@ header {
 
 .page-header h1 span{
     color: #FF807B;
-    font: 600 18px "Arimo";
+    font: 600 18px "Exo 2";
     float: right;
     padding: 15px 30px 0 30px;
 }
 
-.box-paging {
-    margin-left: 30%;
-    margin-right: 30%;
-    margin-top: 40px;
-    width: 40%;
-    padding: 10px;
+.pagination li a{
+    font-size: 14px;
+    font-family: 'Exo 2', sans-serif;
+    margin: 0 5px;
+}
+
+.pagination li a:hover{
+    color: #FF807B;
 }
 
 .post .post-title h2 {
@@ -291,6 +299,10 @@ header {
     font-size: 14px;
 }
 
+.post hr{
+    margin-left: 36px;
+}
+
 .about {
     margin-top: 20px;
     margin-left: 36px;
@@ -333,13 +345,28 @@ header {
     border-top: 1px solid #cccccc;
     background-color: #f5f5f5;
     text-align: center;
-    z-index: 99999;
+    z-index: 999;
 }
 
 footer p{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 100%;
     padding-top: 5px;
+}
+
+#btn-up {
+    box-shadow: 5px 5px 5px -1px #dddddd;
+    color: #FF807B;
+    display: none;
+    font-size: 15px;
+    position: fixed;
+    bottom: 10%;
+    right: 2%;
+    z-index: 999;
+}
+#btn-up::before{
+    font-size: 18px;
+    content: '↑';
 }
 
 /*------Hamburger------*/
@@ -421,7 +448,7 @@ footer p{
 }
 /*-----#endregion-----*/
 
-.menu-categories { 
+#menu-categories { 
     width: 300px;
     display: none;
     background: #f1f1f1;
@@ -434,33 +461,33 @@ footer p{
     z-index: 997; 
 }
 
-.menu-categories ul {
+#menu-categories ul {
     margin: 0; 
     padding: 0;
     list-style-type: none;
     list-style-image: none;
 }
 
-.menu-categories li {
+#menu-categories li {
     display: block;
     padding: 20px 0 20px 0;
     border-bottom:#dddddd 1px solid;
 }
 
-.menu-categories li:hover { 
+#menu-categories li:hover { 
     display: block;    
     background:#ffffff;
     padding: 20px 0 20px 0;
     border-bottom:#dddddd 1px solid;
 }
 
-.menu-categories ul li a { 
+#menu-categories ul li a { 
     text-decoration:none;
     margin: 0px;
     color: #273747;
 }
 
-.menu-categories ul li a:hover {  
+#menu-categories ul li a:hover {  
     color: #FF807B;
-    text-decoration:none;
+    text-decoration: none;
 }

@@ -11,7 +11,7 @@
         <div class="row">
             <!--Category-->
             <div class="post-category">
-                Category: <span class="label label-primary">@Model.Category.Name</span>
+                <span class="label label-success">@Model.Category.Name</span>
             </div>
             <!--Tags-->
             <div class="post-tags">
@@ -32,12 +32,14 @@
     </div>
     <!--post-footer-->
     <div class="post-foot">
-        @Html.ActionLink("Read...", "ReadMore", "Post", new {
+        @Html.ActionLink("Читать...", "ReadMore", "Post", new {
        year = Model.PostedOn.Year,
        month = Model.PostedOn.Month,
        titlePost = Model.Title,
        id = Model.Id
-   }, new { title = "Read more...",})
+   }, new { title = "Читать все...",})
     </div>
+    <br />
+    <hr />
 </div>
 

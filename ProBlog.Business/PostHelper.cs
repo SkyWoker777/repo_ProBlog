@@ -49,7 +49,10 @@ namespace ProBlog.Business
 
         public Post GetPost(int id)
         {
-            return _context.Posts.First(x => x.Id == id);
+            var query = _context.Posts.First(x => x.Id == id);
+            if (query == null)
+                return null;
+            return query;
         }
     }
 }

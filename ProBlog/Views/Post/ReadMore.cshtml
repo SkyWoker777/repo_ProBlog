@@ -14,7 +14,7 @@
         </div>
         <div class="row">
             <div class="post-category">
-                Category: <span class="label label-primary">@Model.Category.Name</span>
+               Категория: <span class="label label-success">@Model.Category.Name</span>
             </div>
             <div class="post-tags">
                 Tags: <span class="label label-info"></span>
@@ -25,13 +25,13 @@
         </div>
     </div>
     <div class="post-body">
-        <img class="img-responsive" alt="post image" src="@Url.Action("GetImage", "Post", new { Model.Id })" />
+        <img class="img-responsive" src="@Url.Action("GetImage", "Post", new { Model.Id })" alt="post image" itemprop="image" />
         <div class="text-justify">
             @Html.Raw(Model.Content)
         </div>
     </div>
     <div class="post-foot">
-        @Html.ActionLink("BACK To Posts", "List", "Post")
+        <input type="button" onclick="history.back();" value="&larr; Вернуться" class="btn btn-default" />
     </div>
 </div>
 

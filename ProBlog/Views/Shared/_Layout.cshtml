@@ -14,7 +14,7 @@
         <div class="jumbotron">
             <div class="logo-text">
                 <h1><a href="/">PURE<span class="logo-text-color">BiT</span></a></h1>
-                <p>News, Reviews, Things and more...</p>
+                <p>News, Reviews, Experiments and more...</p>
             </div>
             <!--Header-->
             <div class="panel panel-default">
@@ -27,21 +27,23 @@
                 <div class="panel-body">
                     <nav id="menu">
                         <ul class="main-navigation">
-                            <li>@Html.ActionLink("Blog", "Index", "Home")</li>
-                            <li>@Html.ActionLink("About me", "About", "Home")</li>
-                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                            <li>@Html.ActionLink("Portfolio", "Portfolio", "Home", null, new { target ="_blank" })</li>
+                            <li>@Html.ActionLink("Блог", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Обо мне", "About", "Home")</li>
+                            <li>@Html.ActionLink("Контакт", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("Портфолио", "Portfolio", "Home", null, new { target ="_blank" })</li>
                         </ul>
                     </nav>
                 </div>
             </div>
         </div>
-
     <!--Site content-->
     <div class="container body-content">
         <div id="page_content">
-                @RenderBody()
+            @RenderBody()
         </div>
+        <button id="btn-up" class="btn btn-default" onclick="up();">
+            Вверх
+        </button>
     </div>
     <!--footer-->
     @*<div class="footer">

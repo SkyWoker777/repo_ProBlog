@@ -72,7 +72,7 @@ namespace ProBlog.Controllers
                 throw new HttpException(404, "post not found!");
             }
 
-            return View(post);
+            return View("ReadMore", post);
         }
 
         public FileContentResult GetImage(int postId)

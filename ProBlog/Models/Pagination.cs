@@ -7,9 +7,9 @@ namespace ProBlog.Models
 {
     public class Pagination
     {
-        public int PageNumber { get; set; } // номер текущей страницы
-        public int PageSize { get; set; } // кол-во объектов на странице
-        public int TotalItems { get; set; } // всего объектов
-        public int TotalPages => (int)Math.Ceiling((decimal)TotalItems / PageSize);  // всего страниц
+        public int PageNumber { get; set; }
+        public int PageSize { get; set; }
+        public int TotalItems { get; set; }
+        public int TotalPages => (int)Math.Ceiling((decimal)TotalItems / PageSize);
     }
 }

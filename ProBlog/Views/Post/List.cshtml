@@ -1,7 +1,7 @@
 ﻿@model ProBlog.Models.BlogViewModel
 @using ProBlog.Helpers
 @{
-    ViewBag.Title = "Blog";
+    ViewBag.Title = "Blog | Dmitry Parfenov";
 }
 
 <header>
@@ -24,10 +24,9 @@
     else
     {
         <div class="notfound">
-            <p>Posts not found!</p>
+            <p><img src="~/Content/images/posts_notfound.png" alt="" itemprop="image">!</p>
         </div>
     }
-<br/>
 <div class="box-paging">
     <ul class="pagination">
         @Html.PageLinks(Model.PageInfo, x => Url.Action("List", new { page = x }))

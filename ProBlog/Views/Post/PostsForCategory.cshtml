@@ -20,12 +20,12 @@
 else
 {
     <div class="notfound">
-        <p>Posts not found!</p>
+        <p><img alt="" src="~/Content/images/posts_notfound.png" itemprop="image" /></p>
     </div>
 }
 <div class="box-paging">
     <ul class="pagination">
         @Html.PageLinks(Model.PageInfo, x => Url.Action("ListByCategory", new { page = x }))
-    </ul>
+    </ul>    
 </div>
 
